@@ -116,7 +116,7 @@ public class Client implements Closeable {
         @Override
         public MetricRef addParams(String... v) {
             String[] newParams = Arrays.copyOf(this.params, this.params.length + v.length);
-            System.arraycopy(v, 0, newParams, this.params.length, newParams.length);
+            System.arraycopy(v, 0, newParams, this.params.length, v.length);
             return new MetricRefImpl(this.name, hasEnv, newParams, tagsNames, tagsValues, unixTime);
         }
 
